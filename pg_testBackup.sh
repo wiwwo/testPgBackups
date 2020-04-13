@@ -16,8 +16,8 @@ export tmpFileImport=`/usr/bin/mktemp /tmp/$whoAmI.XXXXXXXXXXXXXXXXXX`
 cp -f $backupToTest $tmpFileImport
 
 #echo "Testing import of file $1"...
-USER=randomuser_does_not_exitst123 /usr/bin/pg_virtualenv >/dev/null 2> /dev/null << PGVIRTUALENV
-USER=randomuser_does_not_exitst345 /usr/bin/psql < $tmpFileImport >/dev/null 2> $tmpFileErrorlog
+USER=fakeuser123 /usr/bin/pg_virtualenv >/dev/null 2> /dev/null << PGVIRTUALENV
+USER=fakeuser345 /usr/bin/psql < $tmpFileImport >/dev/null 2> $tmpFileErrorlog
 PGVIRTUALENV
 #echo "... done"
 
